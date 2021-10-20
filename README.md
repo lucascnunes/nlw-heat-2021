@@ -1,4 +1,4 @@
-# nlw-heat-2021
+# NLWH Heat 2021
 Repositório para o conteúdo feito durante as aulas do NLW Heat 2021
 
 - Node JS ✅ (18/10/2021)
