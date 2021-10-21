@@ -3,13 +3,13 @@ Repositório para o conteúdo feito durante as aulas do NLW Heat 2021
 
 - Node JS ✅ (18/10/2021)
 - React JS ✅ (19/10/2021)
-- React-native ⚠️ (20/10/2021) - terminando a aula
+- React-native ✅ (20/10/2021)
 - Elixir ⏳ (21/10/2021)
 
 Caso utilize as aplicações acima siga os passos abaixo:
 ### node
 - Crie o arquivo .env
-- Defina as keys do github para a aplicação react e para a aplicação reac-native
+- Defina as keys do github para a aplicação react e para a aplicação react-native
 
 Crie 2 oAuth applications no github cada uma com seu client_id e client_secret.
 
