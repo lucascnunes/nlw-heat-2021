@@ -25,7 +25,7 @@ interface IUserResponse {
 
 class AuthenticateUserService {
 
-  async execute(code: string, app_request) {
+  async execute(code: string, app_request?: string) {
  
     const url = "https://github.com/login/oauth/access_token";
 
