@@ -25,16 +25,27 @@ interface IUserResponse {
 
 class AuthenticateUserService {
 
-  async execute(code: string) {
-    
+  async execute(code: string, app_request) {
+ 
     const url = "https://github.com/login/oauth/access_token";
+
+    let params;
+    if (app_request && app_request === 'react') {
+      params = {
+        client_id: process.env.REACT_GITHUB_CLIENT_ID,
+        client_secret: process.env.REACT_GITHUB_CLIENT_SECRET,
+        code,
+      }
+    } else {
+      params = {
+        client_id: process.env.APP_GITHUB_CLIENT_ID,
+        client_secret: process.env.APP_GITHUB_CLIENT_SECRET,
+        code,
+      }
+    }
     
     const { data: accessTokenResponse } = await axios.post<IAccessTokenResponse>(url, null, { 
-      params: {
-        client_id: process.env.GITHUB_CLIENT_ID,
-        client_secret: process.env.GITHUB_CLIENT_SECRET,
-        code
-      },
+      params: params,
       headers: {
         "Accept": "application/json"
       }

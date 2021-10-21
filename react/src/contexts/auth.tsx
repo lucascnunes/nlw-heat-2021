@@ -34,7 +34,7 @@ export function AuthProvider(props: AuthProvider) {
 
   const [user, setUser] = useState<User | null>(null);
 
-  const signInUrl = `https://github.com/login/oauth/authorize?scope=user&client_id=32b577b6a393680d5523`;
+  const signInUrl = `https://github.com/login/oauth/authorize?client_id=32b577b6a393680d5523&redirect_uri=http://localhost:3000&scope=user`;
 
 
   async function signIn(githubCode: string) {
@@ -42,14 +42,18 @@ export function AuthProvider(props: AuthProvider) {
     // send githubcode to node backend
     const response = await api.post<AuthResponse>('authenticate', {
       code: githubCode,
+      app_request: 'react'
     });
 
     const { token, user } = response.data;
+    if (token) {
+      localStorage.setItem('@dowhile:token', token);
+      api.defaults.headers.common.authorization = `Bearer ${token}`;
+  
+      setUser(user);  
+    }
 
-    localStorage.setItem('@dowhile:token', token);
-    api.defaults.headers.common.authorization = `Bearer ${token}`;
-
-    setUser(user);
+    console.log(response);
   }
 
   function signOut() {
