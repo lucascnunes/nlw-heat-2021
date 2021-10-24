@@ -4,7 +4,7 @@ Repositório para o conteúdo feito durante as aulas do NLW Heat 2021
 - Node JS ✅ (18/10/2021)
 - React JS ✅ (19/10/2021)
 - React-native ✅ (20/10/2021)
-- Elixir ⏳ (21/10/2021)
+- Elixir ✅ (21/10/2021)
 
 Caso utilize as aplicações acima siga os passos abaixo:
 ### node
